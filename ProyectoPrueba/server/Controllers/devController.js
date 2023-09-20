@@ -30,3 +30,23 @@ exports.deleteDev = async (req, res) => {
     return res.status(202).json(DevToDelete)
 };
 
+exports.loginDev = async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const dev = await Dev.findOne({ email });
+  
+      if (!dev) {
+        return res.status(401).json({ error: 'Credenciales inválidas' });
+      }
+  
+      if (password !== dev.password) {
+        return res.status(401).json({ error: 'Credenciales inválidas' });
+      }
+  
+      res.status(200).json({ message: 'Inicio de sesión exitoso' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error en el servidor' });
+    }
+  };
+
