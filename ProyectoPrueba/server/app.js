@@ -6,7 +6,7 @@ const express = require ('express');
 const app = express();
 const mongoose = require ('mongoose');
 const routes = require ('./Routes/routes')
-const port = 3000;
+const port = 3001;
 
 app.use (express.json());
 app.use ('/api', routes)
