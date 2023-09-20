@@ -31,25 +31,24 @@ exports.deleteCompany = async (req, res) => {
 };
 
 exports.loginCompany = async (req, res) => {
-    try {
-      const { email, password } = req.body;
-      const company = await Company.findOne({ email });
-  
-      if (!company) {
-        return res.status(401).json({ error: 'Credenciales inválidas' });
-      }
-  
-      if (password !== company.password) {
-        return res.status(401).json({ error: 'Credenciales inválidas' });
-      }
-  
-      res.status(200).json({ message: 'Inicio de sesión exitoso' });
-      // res.status(200).redirect(`/companies/${company._id}`);
-      
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error en el servidor' });
+  try {
+    const { email, password } = req.body;
+    const company = await Company.findOne({ email });
+
+    if (!company) {
+      return res.status(401).json({ error: 'Credenciales inválidas 1' });
     }
-  };
+
+    if (password !== company.password) {
+      return res.status(401).json({ error: 'Credenciales inválidas 2' });
+    }
+
+    res.status(200).json({ message: 'Inicio de sesión exitoso' });
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error en el servidor' });
+  }
+};
 
 

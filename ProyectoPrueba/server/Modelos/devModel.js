@@ -26,6 +26,12 @@ const devSchema = new mongoose.Schema({
         unique: true
     },
 
+    password: {
+        type: String,
+        requeried: true,
+        unique: true
+    },
+
     rol: {
         type: String,
         required: true,
@@ -65,14 +71,6 @@ const devSchema = new mongoose.Schema({
         required: true,
         lowercase: true
     },
-
-    // contraseña: {
-    //     type: String,
-    //     requeried: true,
-    //     unique: true
-    // }
-
-    // fotoperfil
 })
 
 const Dev = mongoose.model("Dev", devSchema);
