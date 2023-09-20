@@ -20,6 +20,12 @@ const companySchema = new mongoose.Schema({
         unique: true
     },
 
+    password: {
+        type: String,
+        requeried: true,
+        unique: true
+    },
+
     ofertas_empleo: [
         {
             rol: {
@@ -62,14 +68,6 @@ const companySchema = new mongoose.Schema({
             } 
         },
     ],
-
-    // contraseña: {
-    //     type: String,
-    //     requeried: true,
-    //     unique: true
-    // }
-
-    // fotoperfil
 })
 
 const Company = mongoose.model("Company", companySchema);
