@@ -13,6 +13,7 @@ function LoginDev() {
                             <i className="fa fa-key"></i>
                             Iniciar Sesión
                             </h3>
+                            {/* Formulario de inicio de sesión */}
                             <form>
                                 <div className="mb-2">
                                     <label htmlFor="name" className="form-label mb-1">Nombre de Usuario</label>
@@ -27,6 +28,7 @@ function LoginDev() {
                                     <button type="button" className="btn btn-secondary">Registrarse</button>
                                 </div>
                             </form>
+
                             <div className="mt-4 text-center">
                                 <p>O inicia sesión con:</p>
                                 <div className="d-flex justify-content-center">

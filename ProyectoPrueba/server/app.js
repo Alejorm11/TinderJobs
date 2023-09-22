@@ -7,9 +7,11 @@ const app = express();
 const mongoose = require ('mongoose');
 const routes = require ('./Routes/routes')
 const port = 3001;
+const cors = require('cors')
 
 app.use (express.json());
 app.use ('/api', routes)
+app.use (cors())
 
 app.listen (port, () => {
     console.log (`Servidor en ejecucion en el puerto ${port}`)
